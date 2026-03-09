@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Hub - The Influence Blueprint | March 28, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4B0;
+            --gold-dark: #B8941F;
+            --black: #0A0A0A;
+            --black-light: #1A1A1A;
+            --white: #FFFFFF;
+            --off-white: #F8F8F8;
+            --gray: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Elegant serif headings */
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animated gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 50%, var(--black) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Gold accent line animation */
+        .gold-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 30px auto;
+            animation: lineGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes lineGlow {
+            0%, 100% { opacity: 0.6; transform: scaleX(1); }
+            50% { opacity: 1; transform: scaleX(1.2); }
+        }
+
+        /* Fade in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Slide in from left */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Slide in from right */
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Scale on scroll */
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Hero Section - Premium Black & Gold */
+        .hero {
+            position: relative;
+            background: var(--black);
+            color: var(--white);
+            padding: 120px 20px 140px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Animated gold particles */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            animation: particleFloat 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: goldShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes goldShimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        .hero .subtitle {
+            font-size: 1.8em;
+            font-weight: 300;
+            color: var(--gold);
+            margin-bottom: 40px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .headline {
+            font-size: 2.5em;
+            max-width: 900px;
+            margin: 40px auto 30px;
+            line-height: 1.3;
+            font-weight: 400;
+            color: var(--white);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero .description {
+            font-size: 1.25em;
+            max-width: 800px;
+            margin: 30px auto;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .event-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            color: var(--black);
+            padding: 15px 40px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            font-weight: 700;
+            border-radius: 50px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+            animation: fadeInUp 1s ease 1.2s both, pulse 2s ease-in-out 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(212, 175, 55, 0.5); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .wide-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Event Details - Premium Card */
+        .event-details {
+            background: var(--white);
+            padding: 80px 60px;
+            margin: -80px auto 0;
+            position: relative;
+            z-index: 10;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .event-details h2 {
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: var(--black);
+            text-align: center;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+        }
+
+        .detail-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            background: var(--off-white);
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .detail-item:hover {
+            transform: translateY(-10px);
+            background: var(--black);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-item:hover .detail-label {
+            color: var(--gold);
+        }
+
+        .detail-item:hover .detail-value {
+            color: var(--white);
+        }
+
+        .detail-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray);
+            margin-bottom: 12px;
+            font-weight: 700;
+            transition: color 0.4s ease;
+        }
+
+        .detail-value {
+            font-size: 1.4em;
+            color: var(--black);
+            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            transition: color 0.4s ease;
+        }
+
+        /* Section Spacing */
+        .section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .section-light {
+            background: var(--off-white);
+        }
+
+        .section-white {
+            background: var(--white);
+        }
+
+        /* Session Card - Interactive */
+        .session-card {
+            background: var(--white);
+            padding: 70px 60px;
+            margin: 60px 0;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .session-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .session-card:hover::before {
+            left: 100%;
+        }
+
+        .session-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .session-card h2 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            color: var(--black);
+            position: relative;
+        }
+
+        .session-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .objective-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%);
+            color: var(--gold);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin: 25px 0 35px 0;
+            letter-spacing: 0.02em;
+        }
+
+        .session-card h3 {
+            font-size: 1.8em;
+            margin: 50px 0 25px 0;
+            color: var(--black);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .session-card h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 30px;
+            background: var(--gold);
+        }
+
+        .session-card p {
+            margin: 25px 0;
+            color: var(--black);
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .session-card p strong {
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        .outcome-list {
+            list-style: none;
+            padding: 0;
+            margin: 40px 0;
+        }
+
+        .outcome-list li {
+            padding: 20px 0 20px 60px;
+            position: relative;
+            font-size: 1.15em;
+            color: var(--black);
+            line-height: 1.7;
+            transition: all 0.3s ease;
+        }
+
+        .outcome-list li:hover {
+            padding-left: 70px;
+            color: var(--gold-dark);
+        }
+
+        .outcome-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Bridge Section - Animated */
+        .bridge {
+            text-align: center;
+            padding: 100px 40px;
+            font-size: 2em;
+            font-weight: 400;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--black);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .bridge::before,
+        .bridge::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+        }
+
+        .bridge::before {
+            top: -60px;
+        }
+
+        .bridge::after {
+            bottom: -60px;
+        }
+
+        /* Value Section - Premium */
+        .value-section {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .value-section h2 {
+            font-size: 3.5em;
+            margin-bottom: 80px;
+            color: var(--white);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3px;
+            background: rgba(212, 175, 55, 0.3);
+            max-width: 700px;
+            margin: 60px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .value-item {
+            background: var(--black-light);
+            padding: 25px 35px;
+            text-align: left;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .value-item.header {
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .value-amount {
+            text-align: right;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.1em;
+        }
+
+        .total-banner {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+            color: var(--black);
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 700px;
+            border-radius: 20px;
+            font-size: 1.8em;
+            font-weight: 700;
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4); }
+            50% { box-shadow: 0 20px 70px rgba(212, 175, 55, 0.6); }
+        }
+
+        .price-banner {
+            background: var(--white);
+            color: var(--black);
+            padding: 50px;
+            margin: 30px auto;
+            max-width: 700px;
+            border-radius: 20px;
+            font-size: 3.5em;
+            font-weight: 900;
+            font-family: 'Cormorant Garamond', serif;
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            animation: priceShine 3s ease-in-out infinite;
+        }
+
+        @keyframes priceShine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Bonus Cards - Interactive */
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 80px 0;
+        }
+
+        .bonus-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .bonus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.25);
+            border-color: var(--gold);
+        }
+
+        .bonus-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .bonus-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .bonus-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: var(--black);
+            position: relative;
+            z-index: 2;
+        }
+
+        .bonus-card p {
+            font-size: 1em;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .bonus-value {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Testimonials - Premium Cards */
+        .testimonial-section {
+            padding: 120px 20px;
+            background: var(--off-white);
+            text-align: center;
+        }
+
+        .testimonial-section h2 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            color: var(--black);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin: 80px auto;
+            max-width: 1400px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 25px;
+            text-align: left;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.5s ease;
+            border: 2px solid transparent;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 8em;
+            color: var(--gold);
+            opacity: 0.1;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
+        }
+
+        .testimonial-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: var(--black);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--gold-dark);
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA Button - Premium */
+        .cta-section {
+            text-align: center;
+            padding: 140px 20px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            animation: bgPulse 10s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .cta-section h2 {
+            font-size: 3.5em;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--black);
+            padding: 25px 60px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 15px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.5);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            border: 3px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* FAQ - Elegant */
+        .faq-section {
+            padding: 120px 20px;
+            background: var(--white);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 3.5em;
+            margin-bottom: 80px;
+            color: var(--black);
+        }
+
+        .faq-item {
+            margin: 50px 0;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--off-white);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            padding-left: 20px;
+            border-bottom-color: var(--gold);
+        }
+
+        .faq-question {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .faq-answer {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black);
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .footer a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--gold-light);
+        }
+
+        /* Floating Action Button */
+        .floating-cta {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--black);
+            padding: 20px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);
+            z-index: 1000;
+            transition: all 0.4s ease;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero .headline {
+                font-size: 1.8em;
+            }
+
+            .session-card {
+                padding: 40px 30px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .value-grid {
+                font-size: 0.9em;
+            }
+
+            .price-banner {
+                font-size: 2.5em;
+                padding: 40px 30px;
+            }
+
+            .bonus-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bridge {
+                font-size: 1.5em;
+                padding: 60px 20px;
+            }
+
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+                padding: 15px 25px;
+                font-size: 0.8em;
+            }
+
+            h2 {
+                font-size: 2em !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero gradient-bg">
+        <div class="hero-content">
+            <h1>BOOK HUB</h1>
+            <p class="subtitle">March Edition: The Influence Blueprint</p>
+            <div class="gold-line"></div>
+            <h2 class="headline">Finish your book in 90 days. Not 3 years.</h2>
+            <p class="description">
+                Join 19 other leaders this March 28th and walk out with your manuscript roadmap, fresh pages written, and the accountability system that forces you to finally publish.
+            </p>
+            <div class="event-badge">Limited to 20 Founding Members</div>
+        </div>
+    </div>
+
+    <!-- Event Details -->
+    <div class="section section-light">
+        <div class="container">
+            <div class="event-details fade-in">
+                <h2>March 28, 2026</h2>
+                <div class="details-grid">
+                    <div class="detail-item scale-in">
+                        <div class="detail-label">Date</div>
+                        <div class="detail-value">Friday, March 28</div>
+                    </div>
+                    <div class="detail-item scale-in" style="transition-delay: 0.1s;">
+                        <div class="detail-label">Time</div>
+                        <div class="detail-value">9:00am - 12:00pm</div>
+                    </div>
+                    <div class="detail-item scale-in" style="transition-delay: 0.2s;">
+                        <div class="detail-label">Location</div>
+                        <div class="detail-value">112 Leslie Avenue<br>Fourways, Gauteng</div>
+                    </div>
+                    <div class="detail-item scale-in" style="transition-delay: 0.3s;">
+                        <div class="detail-label">Investment</div>
+                        <div class="detail-value">R300</div>
+                        <div style="font-size: 0.875em; color: var(--gray); margin-top: 5px;">R500 in April</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <div class="section section-white">
+        <div class="container fade-in" style="text-align: center;">
+            <h2 style="font-size: 3em; margin-bottom: 40px;">A 3-hour intensive designed to help you finish what you started.</h2>
+            <div class="gold-line"></div>
+            <p style="max-width: 800px; margin: 30px auto 0; font-size: 1.3em; line-height: 1.8; color: var(--gray);">
+                This isn't a casual writing circle. It's a structured event that gives you the roadmap, accountability, and community to turn your manuscript into a published book.
+            </p>
+        </div>
+    </div>
+
+    <!-- Session 1 -->
+    <div class="section section-light">
+        <div class="container">
+            <div class="session-card slide-in-left">
+                <div class="session-number">1</div>
+                <h2>Community Building & Your 90-Day Commitment</h2>
+                <div class="objective-tag">🎯 Lock in your 90-day finish line with 19 leaders holding you accountable</div>
+
+                <h3>Together, we'll do 3 things:</h3>
+
+                <p><strong>First,</strong> you share your book idea and biggest roadblock. You'll realize every leader in this room faces the same challenges.</p>
+
+                <p><strong>Second,</strong> we match you with 3-5 accountability partners who will check in weekly and make quitting harder than showing up.</p>
+
+                <p><strong>Third,</strong> you publicly declare your 90-day finish line. 19 people witness it. That commitment is the difference between "someday" and "done by June."</p>
+
+                <h3>What You Leave With:</h3>
+                <ul class="outcome-list">
+                    <li>3-5 accountability partners with WhatsApp saved</li>
+                    <li>Your 90-day finish date witnessed publicly</li>
+                    <li>A peer pressure system that works</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bridge fade-in">
+        Accountability without action is just wishful thinking.<br>Which is where Session 2 comes in.
+    </div>
+
+    <!-- Session 2 -->
+    <div class="section section-light">
+        <div class="container">
+            <div class="session-card slide-in-right">
+                <div class="session-number">2</div>
+                <h2>Intensive Writing Sprint</h2>
+                <div class="objective-tag">🎯 Walk out with 500-1,000 words of real manuscript progress</div>
+
+                <h3>Together, we'll do 3 things:</h3>
+
+                <p><strong>First,</strong> I give you a guided prompt: "The Scene That Changed Everything." Every book has a pivotal moment. You're about to write yours.</p>
+
+                <p><strong>Next,</strong> phones off. Distractions eliminated. You write for 30 minutes straight. No editing. Just forward progress.</p>
+
+                <p><strong>Finally,</strong> you count your words. Most people write 500-1,000 words. That's proof you can produce under structure.</p>
+
+                <h3>What You Leave With:</h3>
+                <ul class="outcome-list">
+                    <li>500-1,000 fresh words written</li>
+                    <li>Proof that constraints fuel creativity</li>
+                    <li>Momentum to keep writing at home</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Session 3 -->
+    <div class="section section-light">
+        <div class="container">
+            <div class="session-card slide-in-left">
+                <div class="session-number">3</div>
+                <h2>Masterclass: Position Yourself as THE Authority</h2>
+                <div class="objective-tag">🎯 Learn how published authors charge 2-3x more and attract premium clients</div>
+
+                <h3>Together, we'll do 3 things:</h3>
+
+                <p><strong>First,</strong> we break down The Authority Equation—why "expert" means nothing until you publish, and how a book turns you into THE voice in your industry.</p>
+
+                <p><strong>Next,</strong> we dive into The Positioning Play—how to structure your book so it positions you as the definitive authority readers can't ignore.</p>
+
+                <p><strong>Finally,</strong> we walk through The Client-Generation System—the exact framework to turn your book into 30-50 inbound leads per month.</p>
+
+                <h3>What You Leave With:</h3>
+                <ul class="outcome-list">
+                    <li>Clarity on how your book builds authority</li>
+                    <li>The positioning framework for your industry</li>
+                    <li>A system to generate R20k-50k clients from your book</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bridge fade-in">
+        Even the best-positioned book fails if readers quit after Chapter 1.<br>That's what Session 4 solves.
+    </div>
+
+    <!-- Session 4 -->
+    <div class="section section-light">
+        <div class="container">
+            <div class="session-card slide-in-right">
+                <div class="session-number">4</div>
+                <h2>Masterclass: Structure Your Book So Readers Can't Put It Down</h2>
+                <div class="objective-tag">🎯 Learn the architecture that keeps readers engaged from first page to last</div>
+
+                <h3>Together, we'll do 3 things:</h3>
+
+                <p><strong>First,</strong> we cover The Hook Formula—how to open so powerfully that readers can't stop after page 1.</p>
+
+                <p><strong>Next,</strong> we work through The 3-Act Structure for Non-Fiction—the framework used by bestselling business books.</p>
+
+                <p><strong>Finally,</strong> we structure YOUR book in real-time. You leave with a complete chapter-by-chapter outline.</p>
+
+                <h3>What You Leave With:</h3>
+                <ul class="outcome-list">
+                    <li>Your complete book outline (chapter-by-chapter)</li>
+                    <li>The framework to keep readers engaged</li>
+                    <li>Pacing techniques that make your book unputdownable</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Value Section -->
+    <div class="value-section">
+        <div class="container">
+            <h2 class="fade-in">What you're actually getting</h2>
+
+            <div class="value-grid fade-in">
+                <div class="value-item header">What's Included</div>
+                <div class="value-item header value-amount">Value</div>
+                
+                <div class="value-item">3-Hour Intensive Event</div>
+                <div class="value-item value-amount">R1,200</div>
+                
+                <div class="value-item">Authority Positioning Masterclass</div>
+                <div class="value-item value-amount">R800</div>
+                
+                <div class="value-item">Book Structure Masterclass</div>
+                <div class="value-item value-amount">R800</div>
+                
+                <div class="value-item">Live Manuscript Feedback</div>
+                <div class="value-item value-amount">R600</div>
+                
+                <div class="value-item">Accountability Partnership System</div>
+                <div class="value-item value-amount">R400</div>
+                
+                <div class="value-item">Templates & Resources</div>
+                <div class="value-item value-amount">R200</div>
+            </div>
+
+            <div class="total-banner scale-in">
+                TOTAL VALUE: R4,000
+            </div>
+
+            <div class="price-banner scale-in">
+                YOU PAY: R300
+            </div>
+
+            <p class="fade-in" style="font-size: 1.6em; margin-top: 40px; font-weight: 500; position: relative; z-index: 2;">
+                That's 92% off the actual value.
+            </p>
+            <p class="fade-in" style="margin-top: 20px; font-size: 1.2em; color: var(--gold); position: relative; z-index: 2;">
+                Price goes to R500 in April. This R300 rate is for founding members only.
+            </p>
+        </div>
+    </div>
+
+    <!-- Bonuses -->
+    <div class="section section-white">
+        <div class="container">
+            <h2 class="fade-in" style="text-align: center; margin-bottom: 30px; font-size: 3.5em;">What you're also getting</h2>
+            <div class="gold-line"></div>
+
+            <div class="bonus-grid">
+                <div class="bonus-card scale-in">
+                    <div class="bonus-icon">📘</div>
+                    <h3>The Book Outline Template</h3>
+                    <p>The exact framework used for R95k ghostwriting projects. Complete structure in 2 hours.</p>
+                    <div class="bonus-value">VALUE: R200</div>
+                </div>
+
+                <div class="bonus-card scale-in" style="transition-delay: 0.1s;">
+                    <div class="bonus-icon">🎯</div>
+                    <h3>Authority Positioning Workbook</h3>
+                    <p>Position your book as THE definitive resource in your industry.</p>
+                    <div class="bonus-value">VALUE: R300</div>
+                </div>
+
+                <div class="bonus-card scale-in" style="transition-delay: 0.2s;">
+                    <div class="bonus-icon">🚀</div>
+                    <h3>30-Day Launch Playbook</h3>
+                    <p>Generate 50+ leads when you publish. Email, LinkedIn, Amazon—everything you need.</p>
+                    <div class="bonus-value">VALUE: R400</div>
+                </div>
+
+                <div class="bonus-card scale-in" style="transition-delay: 0.3s;">
+                    <div class="bonus-icon">💬</div>
+                    <h3>WhatsApp Accountability Pod</h3>
+                    <p>Get matched with 3-4 writers. Weekly check-ins. Ongoing support.</p>
+                    <div class="bonus-value">VALUE: R300</div>
+                </div>
+
+                <div class="bonus-card scale-in" style="transition-delay: 0.4s;">
+                    <div class="bonus-icon">⭐</div>
+                    <h3>Founding Member Access</h3>
+                    <p>Lock in R300 pricing for April, May, June. Regular price: R500.</p>
+                    <div class="bonus-value">VALUE: R600</div>
+                </div>
+            </div>
+
+            <p class="fade-in" style="text-align: center; font-size: 1.8em; margin-top: 60px; font-weight: 600;">
+                Total Bonus Value: <span style="color: var(--gold-dark);">R1,800</span>
+            </p>
+            <p class="fade-in" style="text-align: center; font-size: 2.2em; margin-top: 20px; color: var(--gold-dark); font-weight: 700; font-family: 'Cormorant Garamond', serif;">
+                Combined Value: R5,800
+            </p>
+        </div>
+    </div>
+
+    <!-- Testimonials - Wall of Love -->
+    <div class="testimonial-section">
+        <div class="wide-container">
+            <h2 class="fade-in">What leaders are saying</h2>
+            <div class="gold-line"></div>
+            <p class="fade-in" style="font-size: 1.2em; color: var(--gray); margin-bottom: 60px;">From our February workshop in Rosebank</p>
+
+            <!-- Testimonial.to Wall of Love Embed -->
+            <div class="wall-of-love-container fade-in">
+                <iframe 
+                    id='testimonialto-aa77930a-905d-4d30-abfb-58d16b76235d' 
+                    src="https://embed-v2.testimonial.to/w/ralph-publishers?id=aa77930a-905d-4d30-abfb-58d16b76235d" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    width="100%" 
+                    height="800px"
+                    style="border: none; border-radius: 20px; overflow: hidden;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="container">
+            <h2 class="fade-in" style="margin-bottom: 30px;">One year from now, you're either published or still thinking about it.</h2>
+            <div class="gold-line"></div>
+            <p class="fade-in" style="font-size: 1.4em; margin-bottom: 50px; color: rgba(255, 255, 255, 0.8); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                The difference is a decision. Show up March 28. Do the work. Finish the book.
+            </p>
+
+            <a href="mailto:info.ralphpublishers@gmail.com?subject=Book Hub Registration - March 28" class="cta-button scale-in">Reserve My Spot - R300</a>
+
+            <p class="fade-in" style="margin-top: 50px; font-size: 1.1em; color: rgba(255, 255, 255, 0.6);">
+                20 seats available. Registration closes March 26 or when full.
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <div class="container">
+            <h2 class="fade-in">Questions you might have</h2>
+            <div class="gold-line"></div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">I haven't started writing yet. Is this for me?</div>
+                <div class="faq-answer">Yes. We'll help you go from idea to outline to first draft. Several attendees in February were at the "just an idea" stage. They left with structure and momentum.</div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">I'm not a professional writer. Will I fit in?</div>
+                <div class="faq-answer">Perfect. This event is FOR leaders, coaches, and professionals—not professional writers. You have expertise. We'll help you turn it into a book.</div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">Can I really finish in 90 days?</div>
+                <div class="faq-answer">The framework works if you work it. We're giving you the system, the accountability, and the community. You bring the commitment.</div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">Do I have to share my writing?</div>
+                <div class="faq-answer">No. The feedback session is optional. You can observe and learn without sharing.</div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">What should I bring?</div>
+                <div class="faq-answer">Your manuscript if you have one, a notebook or laptop, and an open mind. We provide everything else.</div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">What if I miss this one?</div>
+                <div class="faq-answer">Book Hub runs monthly. But founding member pricing (R300) is March-only. April goes to R500.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="cta-section">
+        <div class="container">
+            <h2 class="fade-in" style="margin-bottom: 50px; font-size: 3.5em;">Ready to finish your book?</h2>
+            <a href="mailto:info.ralphpublishers@gmail.com?subject=Book Hub Registration - March 28" class="cta-button scale-in">Register Now - R300</a>
+            <a href="https://wa.me/27678291677?text=I%27d%20like%20to%20register%20for%20Book%20Hub%20-%20March%2028" class="cta-button cta-secondary scale-in" style="transition-delay: 0.1s;">WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h3 style="font-size: 2em; margin-bottom: 20px; color: var(--gold);">BOOK HUB</h3>
+        <div class="gold-line"></div>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 40px; font-size: 1.1em;">Monthly Accountability Community for Aspiring Authors</p>
+        <p style="margin-bottom: 15px; font-size: 1.1em;">
+            📧 <a href="mailto:info.ralphpublishers@gmail.com">info.ralphpublishers@gmail.com</a>
+        </p>
+        <p style="margin-bottom: 15px; font-size: 1.1em;">
+            📱 WhatsApp: <a href="https://wa.me/27678291677">067 829 1677</a>
+        </p>
+        <p style="margin-bottom: 15px; font-size: 1.1em;">
+            📷 Instagram: <a href="https://instagram.com/ralphpublishers" target="_blank">@ralphpublishers</a>
+        </p>
+        <p style="margin-top: 50px; font-size: 0.9em; color: rgba(255, 255, 255, 0.5);">
+            Ralph Publishers © 2026
+        </p>
+    </div>
+
+    <!-- Floating CTA -->
+    <a href="mailto:info.ralphpublishers@gmail.com?subject=Book Hub Registration - March 28" class="floating-cta">Register Now</a>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hide floating CTA when in CTA sections
+        const floatingCTA = document.querySelector('.floating-cta');
+        const ctaSections = document.querySelectorAll('.cta-section');
+
+        const ctaObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    floatingCTA.style.opacity = '0';
+                    floatingCTA.style.pointerEvents = 'none';
+                } else {
+                    floatingCTA.style.opacity = '1';
+                    floatingCTA.style.pointerEvents = 'all';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        ctaSections.forEach(section => ctaObserver.observe(section));
+    </script>
+
+</body>
+</html>
